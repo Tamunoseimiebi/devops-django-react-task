@@ -1,0 +1,23 @@
+version: "3.2"
+services:
+  backend:
+    restart: always
+    container_name: omiebi-be
+    image: tamunoseimiebi/devops-backend
+    ports:
+      - "9000:9000"
+    networks:
+      - hng-devops
+
+  frontend:
+    restart: always
+    container_name: omiebi-fe
+    image: tamunoseimiebi/devops-frontend
+    ports:
+      - "3000:3000"
+    networks:
+      - hng-devops
+
+networks:
+  hng-devops:
+    driver: bridge
