@@ -10,11 +10,8 @@ WORKDIR /frontend
 # Copy all files from current directory to working dir in image
 COPY . /frontend
 # install node modules and build assets
-RUN yarn install && yarn build
+RUN yarn install
 
 
-FROM nginx:1.16.0-alpine
-COPY --from=build /frontend/build /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/nginx.conf
 EXPOSE 3000
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["yarn", "start"]

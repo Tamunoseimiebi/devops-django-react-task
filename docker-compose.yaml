@@ -2,7 +2,7 @@ version: "3.2"
 services:
   backend:
     restart: always
-    container_name: omiebi-be
+    container_name: backend
     image: tamunoseimiebi/devops-backend
     ports:
       - "9000:9000"
@@ -11,7 +11,7 @@ services:
 
   frontend:
     restart: always
-    container_name: omiebi-fe
+    container_name: frontend
     image: tamunoseimiebi/devops-frontend
     ports:
       - "3000:3000"
